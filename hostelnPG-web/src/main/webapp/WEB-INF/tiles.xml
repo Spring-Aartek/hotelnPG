@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tilles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+  <definition name="baseTemplate" id="baseTemplate" template="/WEB-INF/view/baseLayout.jsp">
+    <!-- <put-attribute name="title" value="${title}" /> -->
+    <put-attribute name="title" value="prestigepoint" />
+    <put-attribute name="header" value="/WEB-INF/view/header.jsp" />
+    <put-attribute name="body" value="${body}" />
+    <put-attribute name="footer" value="/WEB-INF/view/footer.jsp" />
+  </definition>
+  
+  
+   <!-- <definition name="mainTemplate" id="mainTemplate" template="/WEB-INF/jsp/mainLayout.jsp">
+    <put-attribute name="title" value="${title}" />
+    <put-attribute name="title" value="prestigepoint" />
+    <put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+    <put-attribute name="body" value="${body}" />
+    <put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+  </definition>
+  
+   <definition name="singleTemplate" id="singleTemplate" template="/WEB-INF/jsp/singleLayout.jsp">
+    <put-attribute name="title" value="${title}" />
+  </definition> -->
+  <!-- Mapping for Welcome Page -->
+   
+  
+  <definition name="login" id="login" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/login.jsp" />
+    <put-attribute name="title" type="string" value="login Page" />
+  </definition>
+  
+   <definition name="welcome" id="welcome" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/welcome.jsp" />
+    <put-attribute name="title" type="string" value="welcome Page" />
+  </definition>
+  
+  <definition name="register" id="register" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/register.jsp" />
+    <put-attribute name="title" type="string" value="Registration Page" />
+  </definition>
+  
+  <definition name="Search" id="Search" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/Search.jsp" />
+    <put-attribute name="title" type="string" value="Search Filter Page" />
+  </definition>
+  
+   <definition name="viewHome" id="viewHome" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/viewHome.jsp" />
+    <put-attribute name="title" type="string" value="SearchHome Page" />
+  </definition>
+  
+  <definition name="registerUsingAjax" id="registerUsingAjax" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/registerUsingAjax.jsp" />
+    <put-attribute name="title" type="string" value="RegistrationAjax Page" />
+  </definition>
+  
+    <definition name="view" id="view" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/view.jsp" />
+    <put-attribute name="title" type="string" value="view Page" />
+  </definition>
+   <definition name="employees" id="employees" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/employees.jsp" />
+    <put-attribute name="title" type="string" value="view Page" />
+  </definition>
+  
+  
+  
+  
+</tiles-definitions>
