@@ -35,6 +35,10 @@
     <put-attribute name="body" value="/WEB-INF/view/welcome.jsp" />
     <put-attribute name="title" type="string" value="welcome Page" />
   </definition>
+   <definition name="basic" id="basic" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/a.jsp" />
+    <put-attribute name="title" type="string" value="basic Page" />
+  </definition>
   
   <definition name="register" id="register" extends="baseTemplate">
     <put-attribute name="body" value="/WEB-INF/view/register.jsp" />

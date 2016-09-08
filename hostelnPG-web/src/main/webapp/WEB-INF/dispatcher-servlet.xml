@@ -17,6 +17,18 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
 	<mvc:annotation-driven />
 	<context:annotation-config />
+	
+	 <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+     <property name="mediaTypes">
+       <map>
+   <entry key="html" value="text/html"></entry>
+   <entry key="json" value="application/json"></entry>
+   <entry key="xml" value="application/xml"></entry>
+ </map>
+ </property>
+ </bean>
+	
+	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="contentType" value="text/html;charset=UTF-8" />

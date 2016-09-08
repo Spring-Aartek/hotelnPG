@@ -9,5 +9,6 @@
   	<module>hostelnPG-data</module>
   	<module>hostelnPG-service</module>
     <module>hostelnPG-web</module>
+    <module>hostelnPG-admin</module>
   </modules>
 </project>

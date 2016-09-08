@@ -16,9 +16,11 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import org.springframework.web.servlet.mvc.AbstractController;
@@ -39,7 +41,11 @@ public class LoginController {
 	 * 
 	 * return "login"; }
 	 */
-
+	@RequestMapping("/basic")
+	public String basic(Model model,HttpServletRequest request, HttpServletResponse response) {
+	
+		return "basic";
+	}
 	@RequestMapping("/showlogin")
 	public String login(Model model,HttpServletRequest request, HttpServletResponse response) {
 		model.addAttribute("UserRegistration", new UserRegistration());
@@ -78,6 +84,16 @@ public class LoginController {
 			return "login";
 		}
 	}
+	@RequestMapping(method = RequestMethod.GET, value="/{id}")
+	 public @ResponseBody UserRegistration getUserById(@PathVariable String id){
+		UserRegistration user = new UserRegistration();
+		user.setId(1);
+		user.setFirstName("Abhi");
+		user.setLastName("chouhan");
+		user.setMobile("1790214570");
+		user.setEmailId("Email@gmail.com");
+	  return user;
+	 }
 
 	
 }

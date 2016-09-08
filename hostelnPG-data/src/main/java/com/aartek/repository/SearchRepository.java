@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.aartek.model.City;
 import com.aartek.model.Country;
+import com.aartek.model.HostelnPGPost;
 import com.aartek.model.UserRegistration;
 
 @Repository
@@ -40,4 +41,15 @@ public class SearchRepository {
 
 	}
 
+	public List<HostelnPGPost> searchbyFilterRepository() {
+		List<HostelnPGPost> hostelnPGPost ;
+			
+			hostelnPGPost = hibernateTemplate.find("from HostelnPGPost");
+
+				return hostelnPGPost;
+
+		}
+
+	
+	
 }

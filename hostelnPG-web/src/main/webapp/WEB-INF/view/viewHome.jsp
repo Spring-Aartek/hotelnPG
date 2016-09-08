@@ -107,7 +107,7 @@ $("#country").autocomplete("getArea");
 	</form:form>
 
 
-<h4><a href="searchfilter">Click to Filter</a>   |  <a href="showlogin">Login</a> 
+<h4><a href="searchfilter">Click to Filter</a>   |  <a href="showlogin">Login</a>  |  <a href="basic">Basic</a>
 
 </body>
 </html>

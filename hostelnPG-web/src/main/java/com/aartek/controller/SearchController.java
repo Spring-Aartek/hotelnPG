@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aartek.model.City;
 import com.aartek.model.Country;
+import com.aartek.model.HostelnPGPost;
 import com.aartek.model.UserRegistration;
 import com.aartek.service.RegisterService;
 import com.aartek.service.SearchService;
@@ -67,28 +68,15 @@ public class SearchController {
 	}
 	
 	
-	@RequestMapping(value="/getArea",method = RequestMethod.POST)
-	 public String getArea(@ModelAttribute("Country") Country country,
-			Map<String, Object> map, Model model,@RequestParam(required = false) Integer country_id) throws Exception {
-		
-	
-		System.out.println("calling Area Search");
-	
-			
-			return "viewHome";
-			
-			
-		
-	}
 	
 	@RequestMapping(value="/searchfilter")
 	 public String searchfilter(@ModelAttribute("UserRegistration") UserRegistration userregistration,
 			Map<String, Object> map, Model model,@RequestParam(required = false) Integer country_id) throws Exception {
 	
-		List<UserRegistration> userList = regService.getUserRecord(userregistration);
+		List<HostelnPGPost> hostelnPGPost = searchService.validateSearchByFilterService();
 	
 	
-		model.addAttribute("userList",userList);	
+		model.addAttribute("hostelnPGPost",hostelnPGPost);	
 		
 			return "Search";
 			

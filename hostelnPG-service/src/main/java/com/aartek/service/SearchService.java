@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.aartek.model.City;
 import com.aartek.model.Country;
+import com.aartek.model.HostelnPGPost;
 import com.aartek.model.UserRegistration;
 import com.aartek.repository.LoginRepository;
 import com.aartek.repository.SearchRepository;
@@ -47,4 +48,21 @@ List<City> cityList = null;
 		
 		}
 	}
+	public List<HostelnPGPost> validateSearchByFilterService() {
+		List<HostelnPGPost> HostelnPGPost = null;
+				
+		HostelnPGPost=searchrepository.searchbyFilterRepository();
+				if(HostelnPGPost.size()==0)
+				{
+					return null; 
+				}
+				else
+				{
+					return HostelnPGPost;
+				
+				}
+			}
+	
+	
+	
 	}
