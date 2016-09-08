@@ -54,6 +54,7 @@ public class LoginController {
 			if(logger.isDebugEnabled()){
 				logger.debug("getWelcome is executed!");
 			}
+			
 
 			//logs exception
 			logger.error("This is Error message", new Exception("Testing"));
