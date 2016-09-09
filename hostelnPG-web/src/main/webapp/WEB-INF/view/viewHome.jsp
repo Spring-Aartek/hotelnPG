@@ -86,6 +86,7 @@ $("#country").autocomplete("getArea");
 </form:select>
                                 </td>
 			
+			<!-- file change   -->
 			</tr>
 		
 		<tr><td>City :</td>
