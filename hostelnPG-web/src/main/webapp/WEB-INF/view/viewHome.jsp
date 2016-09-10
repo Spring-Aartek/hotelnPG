@@ -149,10 +149,16 @@ $("#country").autocomplete("getArea");
 </form:select></td>
 		</tr>
 		
-		<tr><td>
-		Select Country   :</td><td>
-<input type="text" id="country" name="country"/>
-		</td></tr>
+		<tr>
+		<tr>
+		   <td>Area :</td>
+		   <td><form:select id="area"  name="area" path="country_name" autocomplete="off">
+  
+        <form:option value="select Area" label="Select Area" />
+  
+        </form:select></td>
+		</tr>
+		</tr>
 			<tr>
 				<td colspan="3"><input type="submit" /></td>
 			</tr>
