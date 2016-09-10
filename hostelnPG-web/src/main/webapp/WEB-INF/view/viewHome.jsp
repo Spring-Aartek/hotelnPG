@@ -58,8 +58,60 @@ $("#country").autocomplete("getArea");
 	 
 	   }
  
+ function myFunc2() {
+	 alert("Area");
+	 var name1 = $('#city').val();
+	 alert(name1);
+	 $.ajax({
+		  type: "post",
+		  url: "getArea",
+		  data : {city_id: name1},
+		  cache: false,
+		  success : function(response) {
+		     
+			 
+				  for (var i = 0; i < response.length; i++) {
+				     $('#area').html('<option value="' + response[i].area_id + '">' + response[i].area_name+ '</option>');
+				  }
+			  
+		 },
+		 
+		  error: function(){      
+		   alert('Error while request..');
+		  }
+		 });
+	 
 
+	 
+	   }
 
+ function myFunc2() {
+	 alert("Area");
+	 var name1 = $('#city').val();
+	 alert(name1);
+	 $.ajax({
+		  type: "post",
+		  url: "getArea",
+		  data : {city_id: name1},
+		  cache: false,
+		  success : function(response) {
+		     
+			 
+				  for (var i = 0; i < response.length; i++) {
+				     $('#area').html('<option value="' + response[i].area_id + '">' + response[i].area_name+ '</option>');
+				  }
+			  
+		 },
+		 
+		  error: function(){      
+		   alert('Error while request..');
+		  }
+		 });
+	 
+
+	 
+	   }
+ 
 </script>
 
 </head>
