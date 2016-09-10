@@ -52,17 +52,17 @@
 $(window).load(function(){
 $('#sharing').on('click', function () {
     var $rowsNo = $('#mytable tbody tr').filter(function () {
-        return $.trim($(this).find('td').eq(2).text()) === "NO"
+        return $.trim($(this).find('td').eq(3).text()) === "NO"
     }).toggle();
 });
 $('#boys').on('click', function () {
     var $rowsNo = $('#mytable tbody tr').filter(function () {
-        return $.trim($(this).find('td').eq(3).text()) === "girls"
+        return $.trim($(this).find('td').eq(4).text()) === "Female"
     }).toggle();
 });
 $('#girls').on('click', function () {
     var $rowsNo = $('#mytable tbody tr').filter(function () {
-        return $.trim($(this).find('td').eq(3).text()) === "boys"
+        return $.trim($(this).find('td').eq(4).text()) === "Male"
     }).toggle();
 });
 
@@ -84,12 +84,7 @@ $('#girls').on('click', function () {
 
 		
 
-<!-- <table>
-  <tr>  <td class="wm">WM </td> <td> spc<td></tr>
-   <tr> <td class="tv">TV</td></tr>
-    <tr><td class="ac">ac</td></tr>
-    
-</table> -->
+
 
 <h1>Search </h1>
 
@@ -105,12 +100,13 @@ $('#girls').on('click', function () {
     </c:when>
     <c:otherwise>
        
-<table id="mytable" class="someclass" summary="bla" border="0" cellpadding="1" cellspacing="1" >
+<table id="mytable" class="someclass" summary="bla" border="1" cellpadding="1" cellspacing="1" style="width:500px;">
     <thead>
  
     <th scope="row">id</th>
      <th scope="row">Hostel Name</th>
-      <th scope="row">Sharing Type</th>
+      <th scope="row">Accomodation Type</th>
+       <th scope="row">Sharing Type</th>
        <th scope="row">Boys /Girls</th>
     	
   </tr>
@@ -125,8 +121,9 @@ $('#girls').on('click', function () {
   <!-- changes type -->
   <td >${hostelnPGPost.id}</td>
     <td>${hostelnPGPost.hostel_name}</td>
-    <td><h6>${hostelnPGPost.sharing_type}</td>
-    <td>${hostelnPGPost.hostel_gender}</td>
+    <td>${hostelnPGPost.accommodation_type}</td>
+        <td>${hostelnPGPost.sharing_type}</td>
+         <td>${hostelnPGPost.hostel_gender}</td>
    
   </tr>
  
@@ -138,21 +135,9 @@ $('#girls').on('click', function () {
 
 </tbody>
 </table>  
+<div style="margin-top:100px;">
+</div>
 
-<%-- 
-<display:table id="model" uid="models"  name="hostelnPGPost" requestURI="/searchfilter" pagesize="3" >
-
-      
-       
-      <td class="p1"> <display:column  property="id" title="id" sortable="true"   /> 
-       
-        <display:column property="hostel_name" title="hostel_name" sortable="true"   />
-       
-       
-  
-    
-    </display:table>
- --%>
 
 
 </body>

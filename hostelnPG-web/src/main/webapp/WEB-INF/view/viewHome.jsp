@@ -116,6 +116,9 @@ $("#country").autocomplete("getArea");
     
 </head>
 <!--new changed -->
+<br>
+<p>
+</p>
 <body>
 <form:form method="POST" modelAttribute="Country" action="searchfilter">
 	
@@ -145,13 +148,16 @@ $("#country").autocomplete("getArea");
         <form:option value="select Area" label="Select Area" />
   
         </form:select></td>
-				<td colspan="3"><input type="submit" /></td>
+				<td colspan="3"><input type="submit" value="Search" /></td>
 			</tr>
 		</table></center>
 	</form:form>
 
 
 <center><h4><a href="searchfilter">Click to Filter</a>   |  <a href="showlogin">Login</a>  |  <a href="basic">Basic</a></center>
+
+<div style="margin-top:100px;">
+</div>
 
 </body>
 </html>

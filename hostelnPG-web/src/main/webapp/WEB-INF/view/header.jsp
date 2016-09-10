@@ -10,9 +10,11 @@
 
 </head>
 <body>
-<div align="center" style=" border: 2px solid #73AD21;">
-<h1>Header</h1>
+<div align="left" style=" border: 2px solid #73AD21;">
+<img src="images/logo.png" alt="HostelnPG" style="width:204px;height:78px;">
+<h2> Hostel n PG services</h2>
 </div>
+
 <b>${message}</b>
 </body>
 </html>

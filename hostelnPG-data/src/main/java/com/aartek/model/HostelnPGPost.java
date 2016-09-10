@@ -21,6 +21,40 @@ public class HostelnPGPost {
 	private String hostel_gender;
 	@Column(name = "accommodation_type")
 	private String accommodation_type;
+	@Column(name = "Country")
+	private String country;
+	@Column(name = "City")
+	private String city;
+	@Column(name = "Area")
+	private String Area;
+	
+	
+	
+	
+	public String getAccommodation_type() {
+		return accommodation_type;
+	}
+	public void setAccommodation_type(String accommodation_type) {
+		this.accommodation_type = accommodation_type;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getArea() {
+		return Area;
+	}
+	public void setArea(String area) {
+		Area = area;
+	}
 	public Integer getId() {
 		return id;
 	}
