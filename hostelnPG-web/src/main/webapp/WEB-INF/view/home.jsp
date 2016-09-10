@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>Home Page </h1>
 <div>
 <a href="editprofile"> Edit Profile </a>
 
