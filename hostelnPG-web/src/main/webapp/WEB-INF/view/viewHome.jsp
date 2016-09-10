@@ -113,7 +113,7 @@ $("#country").autocomplete("getArea");
 	   }
  
 </script>
-
+    
 </head>
 <!--new changed -->
 <body>
