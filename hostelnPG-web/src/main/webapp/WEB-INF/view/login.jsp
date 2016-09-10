@@ -47,9 +47,9 @@
 				</table>
 			</form:form>
 			<a href="registration.do">Register Here</a><p>
-			<a href="registrationajax.do">Register Using AJAX</a>
+		
 			<p>
-			<a href="view.do">View</a><p>
+		
 			
 			
 			<form action="employee.do?id=1" >

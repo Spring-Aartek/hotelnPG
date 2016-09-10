@@ -37,6 +37,14 @@ public class UserRegistration {
 	private String mobile;
 	@Column(name = "password")
 	private String password;
+	@Column(name = "usertype")
+	private String userType;
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<UserDetails> userDetails;
 	
