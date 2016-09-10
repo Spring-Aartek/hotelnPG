@@ -135,9 +135,9 @@ $("#country").autocomplete("getArea");
 			</tr>
 		
 		<tr><td>City :</td>
-		<td><form:select id="city"  name="city"  path="country_name" >
+		<td><form:select id="city"  name="city"  path="country_name" onchange="myFunc2()">
   
-     <form:option      value="select City" label="Select City"  />
+     <form:option value="select City" label="Select City"  />
   
 </form:select></td>
 		</tr>
@@ -145,7 +145,7 @@ $("#country").autocomplete("getArea");
 		<tr>
 		<tr>
 		   <td>Area :</td>
-		   <td><form:select id="area"  name="area" path="country_name" onchange="myFunc2()" autocomplete="off">
+		   <td><form:select id="area"  name="area" path="country_name" autocomplete="off">
   
         <form:option value="select Area" label="Select Area" />
   
