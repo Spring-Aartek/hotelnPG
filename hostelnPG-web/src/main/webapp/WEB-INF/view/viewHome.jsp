@@ -58,23 +58,68 @@ $("#country").autocomplete("getArea");
 	 
 	   }
  
+ function myFunc2() {
+	 alert("Area");
+	 var name1 = $('#city').val();
+	 alert(name1);
+	 $.ajax({
+		  type: "post",
+		  url: "getArea",
+		  data : {city_id: name1},
+		  cache: false,
+		  success : function(response) {
+		     
+			 
+				  for (var i = 0; i < response.length; i++) {
+				     $('#area').html('<option value="' + response[i].area_id + '">' + response[i].area_name+ '</option>');
+				  }
+			  
+		 },
+		 
+		  error: function(){      
+		   alert('Error while request..');
+		  }
+		 });
+	 
 
+	 
+	   }
 
+ function myFunc2() {
+	 alert("Area");
+	 var name1 = $('#city').val();
+	 alert(name1);
+	 $.ajax({
+		  type: "post",
+		  url: "getArea",
+		  data : {city_id: name1},
+		  cache: false,
+		  success : function(response) {
+		     
+			 
+				  for (var i = 0; i < response.length; i++) {
+				     $('#area').html('<option value="' + response[i].area_id + '">' + response[i].area_name+ '</option>');
+				  }
+			  
+		 },
+		 
+		  error: function(){      
+		   alert('Error while request..');
+		  }
+		 });
+	 
+
+	 
+	   }
+ 
 </script>
-
+    
 </head>
+<!--new changed -->
 <body>
-
-
-
-
-
-
-
-
-	<form:form method="POST" modelAttribute="Country">
+<form:form method="POST" modelAttribute="Country">
 	
-		<table>
+		<center><table>
 
 			<tr>
 				<td>Country :</td>
@@ -87,28 +132,26 @@ $("#country").autocomplete("getArea");
                                 </td>
 			
 			<!-- file change   -->
-			</tr>
-		
-		<tr><td>City :</td>
-		<td><form:select id="city"  name="city"  path="country_name" >
+		<td>City :</td>
+		<td><form:select id="city"  name="city"  path="country_name" onchange="myFunc2()">
   
-     <form:option      value="select City" label="Select City"  />
+     <form:option value="select City" label="Select City"  />
   
 </form:select></td>
-		</tr>
 		
-		<tr><td>
-		Select Country   :</td><td>
-<input type="text" id="country" name="country"/>
-		</td></tr>
-			<tr>
+		   <td>Area :</td>
+		   <td><form:select id="area" name="area" path="country_name" autocomplete="on">
+  
+        <form:option value="select Area" label="Select Area" />
+  
+        </form:select></td>
 				<td colspan="3"><input type="submit" /></td>
 			</tr>
-		</table>
+		</table></center>
 	</form:form>
 
 
-<h4><a href="searchfilter">Click to Filter</a>   |  <a href="showlogin">Login</a>  |  <a href="basic">Basic</a>
+<center><h4><a href="searchfilter">Click to Filter</a>   |  <a href="showlogin">Login</a>  |  <a href="basic">Basic</a></center>
 
 </body>
 </html>
