@@ -11,6 +11,7 @@
 </head>
 <body>
 <!-- login added  -->
+
 <form:form  method="POST" action="verifylogin.do"
 				modelAttribute="UserRegistration" >
 					
@@ -52,11 +53,7 @@
 		
 			
 			
-			<form action="employee.do?id=1" >
-			
-			<input type="button" value="submit"> 
-			</form>
-			
+		
 			
 			
 </body>

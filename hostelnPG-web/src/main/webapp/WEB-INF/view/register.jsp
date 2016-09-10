@@ -134,7 +134,7 @@
 								<p>
 									UserType :
 								 <form:select path="userType">
-								 <form:option value="NONE" label="--- Select ---"/>
+								
 								 <form:option value="HostelSeeker" label="Hostel Seeker"/>
 								 <form:option value="ServiceProvider" label="Service Provider"/>
 								

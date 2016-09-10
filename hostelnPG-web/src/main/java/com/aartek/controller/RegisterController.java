@@ -126,12 +126,16 @@ public class RegisterController {
 
 			return "register";
 		} else {
-
-			String method = request.getMethod();
-			System.out.println("Request Method " + method);
+			boolean userList = registerService.registerService(userregistration);
 			
-			System.out.println(3);
-			return "register";
+			if (userList == false) {
+				
+				return "redirect:/registration.do";
+			} else {
+
+				
+				return "home";
+			}
 		}
 	}
 }

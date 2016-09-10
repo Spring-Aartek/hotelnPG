@@ -31,6 +31,11 @@
     <put-attribute name="title" type="string" value="login Page" />
   </definition>
   
+  <definition name="home" id="home" extends="baseTemplate">
+    <put-attribute name="body" value="/WEB-INF/view/home.jsp" />
+    <put-attribute name="title" type="string" value="Home Page" />
+  </definition>
+  
    <definition name="welcome" id="welcome" extends="baseTemplate">
     <put-attribute name="body" value="/WEB-INF/view/welcome.jsp" />
     <put-attribute name="title" type="string" value="welcome Page" />
