@@ -19,8 +19,8 @@ public class HostelnPGPost {
 	private String sharing_type;
 	@Column(name = "hostel_gender")
 	private String hostel_gender;
-	@Column(name = "pg_gender")
-	private String pg_gender;
+	@Column(name = "accommodation_type")
+	private String accommodation_type;
 	public Integer getId() {
 		return id;
 	}
@@ -46,10 +46,10 @@ public class HostelnPGPost {
 		this.hostel_gender = hostel_gender;
 	}
 	public String getPg_gender() {
-		return pg_gender;
+		return accommodation_type;
 	}
-	public void setPg_gender(String pg_gender) {
-		this.pg_gender = pg_gender;
+	public void setPg_gender(String accommodation_type) {
+		this.accommodation_type = accommodation_type;
 	}
 	
 	
