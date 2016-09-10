@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- login added  -->
 <form:form  method="POST" action="verifylogin.do"
 				modelAttribute="UserRegistration" >
 					
