@@ -117,7 +117,7 @@ $("#country").autocomplete("getArea");
 </head>
 <!--new changed -->
 <body>
-<form:form method="POST" modelAttribute="Country">
+<form:form method="POST" modelAttribute="Country" action="searchfilter">
 	
 		<center><table>
 
