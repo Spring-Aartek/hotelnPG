@@ -8,10 +8,49 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login Page</title>
-</head>
-<body>
-<!-- login added  -->
+<style type="text/css">
+.myform{
+ background: #ffffff none repeat scroll 0 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin: 0 auto 70px;
+    margin-top:60px;
+    max-width: 360px;
+    padding: 25px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
 
+.login-myform{
+background: #f2f2f2 none repeat scroll 0 0;
+    border: 0 none;
+    box-sizing: border-box;
+    font-family: "Roboto",sans-serif;
+    font-size: 14px;
+    margin: 0 0 15px;
+    outline: 0 none;
+    padding: 15px;
+    width: 100%;
+}
+
+.mybutton{background: #4caf50 none repeat scroll 0 0;
+    border: 0 none;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Roboto",sans-serif;
+    font-size: 14px;
+    outline: 0 none;
+    padding: 15px;
+    text-transform: uppercase;
+    width: 100%;
+
+}
+</style>
+</head>
+<body style="background:rgba(0, 0, 0, 0) linear-gradient(to left, #76b852, #8dc26f) repeat scroll 0 0">
+<!-- login added  -->
+<div>
+<div class="myform">
 <form:form  method="POST" action="verifylogin.do"
 				modelAttribute="UserRegistration" >
 					
@@ -21,8 +60,8 @@
 								<%-- <form:errors path="name"  class="label error-label"></form:errors> --%>
 								<label>
 									<p>
-										UserName
-									</p> <form:input path="emailId" 
+									
+									</p> <form:input class="login-myform" path="emailId" 
 										placeholder=" enter your email" 
 										 id="emailId" />
 								</label>
@@ -33,8 +72,8 @@
 								<%-- <form:errors path="subject"  class="label error-label"></form:errors> --%>
 								<label>
 									<p>
-										Password
-									</p> <form:password path="password" 
+									
+									</p> <form:password class="login-myform" path="password" 
 										placeholder="Password" 
 										id="password" />
 								</label>
@@ -42,7 +81,7 @@
 					</tr>
 				
 					<tr>
-						<td colspan="2"><input type="submit" value="Submit"
+						<td colspan="2"><input class="mybutton" type="submit" value="LOGIN"
 							 /> </td>
 					</tr>
 				</table>
@@ -50,11 +89,7 @@
 			<a href="registration.do">Register Here</a><p>
 		
 			<p>
-		
-			
-			
-		
-			
-			
+</div>			
+</div>			
 </body>
 </html>
