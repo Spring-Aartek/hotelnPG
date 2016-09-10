@@ -119,7 +119,7 @@ $("#country").autocomplete("getArea");
 <body>
 <form:form method="POST" modelAttribute="Country">
 	
-		<table>
+		<center><table>
 
 			<tr>
 				<td>Country :</td>
@@ -132,34 +132,26 @@ $("#country").autocomplete("getArea");
                                 </td>
 			
 			<!-- file change   -->
-			</tr>
-		
-		<tr><td>City :</td>
+		<td>City :</td>
 		<td><form:select id="city"  name="city"  path="country_name" onchange="myFunc2()">
   
      <form:option value="select City" label="Select City"  />
   
 </form:select></td>
-		</tr>
 		
-		<tr>
-		<tr>
 		   <td>Area :</td>
-		   <td><form:select id="area"  name="area" path="country_name">
+		   <td><form:select id="area" name="area" path="country_name" autocomplete="on">
   
         <form:option value="select Area" label="Select Area" />
   
         </form:select></td>
-		</tr>
-		</tr>
-			<tr>
 				<td colspan="3"><input type="submit" /></td>
 			</tr>
-		</table>
+		</table></center>
 	</form:form>
 
 
-<h4><a href="searchfilter">Click to Filter</a>   |  <a href="showlogin">Login</a>  |  <a href="basic">Basic</a>
+<center><h4><a href="searchfilter">Click to Filter</a>   |  <a href="showlogin">Login</a>  |  <a href="basic">Basic</a></center>
 
 </body>
 </html>
