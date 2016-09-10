@@ -115,6 +115,7 @@ $("#country").autocomplete("getArea");
 </script>
 
 </head>
+<!-- updated -->
 <body>
 
 
