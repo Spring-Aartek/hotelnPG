@@ -120,7 +120,7 @@ $('#girls').on('click', function () {
   <tr>
   <c:forEach items="${hostelnPGPost}" var="hostelnPGPost">
    
-
+  <!-- changes type -->
   <td >${hostelnPGPost.id}</td>
     <td>${hostelnPGPost.hostel_name}</td>
     <td><h6>${hostelnPGPost.sharing_type}</td>
