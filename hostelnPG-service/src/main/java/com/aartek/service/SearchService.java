@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.aartek.model.Area;
 import com.aartek.model.City;
 import com.aartek.model.Country;
 import com.aartek.model.HostelnPGPost;
@@ -63,6 +64,24 @@ List<City> cityList = null;
 				}
 			}
 	
-	
+	public List<Area> validateAreaService(Integer id) {
+	       List<Area> areaList = null;
+			
+			areaList=searchrepository.searchAreaRepository(id);
+			if(areaList.size()==0)
+			{
+				return null; 
+			}
+			else
+			{
+				 
+			    for (Area area : areaList) {
+					System.out.println(area.getArea_name());
+				}
+				return areaList;
+			
+			}
+		}
+
 	
 	}

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.aartek.model.Area;
 import com.aartek.model.City;
 import com.aartek.model.Country;
 import com.aartek.model.HostelnPGPost;
@@ -67,6 +68,20 @@ public class SearchController {
 		
 	}
 	
+	
+	@ResponseBody
+	@RequestMapping(value="/getArea",method = RequestMethod.POST)
+	 public List<Area> getArea(@ModelAttribute("City") City city,
+			Map<String, Object> map, Model model,@RequestParam(required = false) Integer city_id) throws Exception {
+		    model.addAttribute("Area", new Area()); 
+		    List<Area> areaList = null;
+		    areaList =searchService.validateAreaService(city_id);
+		    
+		    model.addAttribute("areaList",areaList);
+		    System.out.println("calling Area Search");
+	        return areaList;
+			
+	}
 	
 	
 	@RequestMapping(value="/searchfilter")

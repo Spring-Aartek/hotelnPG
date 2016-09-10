@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.aartek.model.Area;
 import com.aartek.model.City;
 import com.aartek.model.Country;
 import com.aartek.model.HostelnPGPost;
@@ -41,6 +42,21 @@ public class SearchRepository {
 
 	}
 
+	
+	public List<Area> searchAreaRepository(Integer id) {
+	    List<Area> areaList ;
+		System.out.println("id ="+id);
+	    areaList = hibernateTemplate.find("from Area where city_id=?",id);
+	    
+	    
+	    for (Area area : areaList) {
+			System.out.println(area.getArea_name());
+		}
+        return areaList;
+
+	}
+	
+	
 	public List<HostelnPGPost> searchbyFilterRepository() {
 		List<HostelnPGPost> hostelnPGPost ;
 			
