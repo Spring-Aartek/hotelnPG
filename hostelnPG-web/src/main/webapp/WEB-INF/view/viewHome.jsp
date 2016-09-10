@@ -145,7 +145,7 @@ $("#country").autocomplete("getArea");
 		<tr>
 		<tr>
 		   <td>Area :</td>
-		   <td><form:select id="area"  name="area" path="country_name" autocomplete="off">
+		   <td><form:select id="area"  name="area" path="country_name" onchange="myFunc2()" autocomplete="off">
   
         <form:option value="select Area" label="Select Area" />
   
