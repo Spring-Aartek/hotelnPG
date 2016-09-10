@@ -91,6 +91,8 @@ $('#girls').on('click', function () {
     
 </table> -->
 
+<h1>Search </h1>
+
   
 	 <input type="checkbox" id="sharing">Yes Need Sharing ?</>  
 	  <input type="checkbox" id="boys">Boys Hostel</>
