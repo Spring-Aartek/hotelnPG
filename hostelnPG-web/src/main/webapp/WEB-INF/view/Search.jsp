@@ -7,47 +7,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
-
-
-
-
-  
+<style type="text/css">
+.mybody2{
+  height:330px;
+  background: rgba(0, 0, 0, 0) url("images/rooms.jpg") repeat-y scroll 0 0 / cover ;
+}
+table {
+    border-collapse: collapse;
+    margin:0 auto;
+}
+</style>
 
   <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-
-  
-
-  
-
-  
-
-  
     <link rel="stylesheet" type="text/css" href="js/result-light.css">
-  
-
-  
-    
-      <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-    
-  
-    
-      <link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
-    
-  
-    
-      <script type="text/javascript" src="js/jquery-ui.js"></script>
-    
-  
-    
-      <link rel="stylesheet" type="text/css" href="js/jquery.dataTables_themeroller.css">
-    
-  
-    
-      <link rel="stylesheet" type="text/css" href="js/jquery.dataTables.css">
-    
-  
-    
-      <script type="text/javascript" src="js/TableTools.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/jquery.dataTables_themeroller.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery.dataTables.css">
+    <script type="text/javascript" src="js/TableTools.min.js"></script>
 <script type="text/javascript">//<![CDATA[
 $(window).load(function(){
 $('#sharing').on('click', function () {
@@ -67,28 +45,14 @@ $('#girls').on('click', function () {
 });
 
 });
-
- 
-
 </script>
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
- 
-
-
-
+<title>HOSTELS</title>
 </head>
 <body>
-
-		
-
-
-
-<h1>Search </h1>
-
-  
+<div class="mybody2">
+<div style="height:auto;margin:0 auto;">
+<h1 style="color:#2A2E33"><b>SEARCH YOUR HOSTELS</b></h1>
 	 <input type="checkbox" id="sharing">Yes Need Sharing ?</>  
 	  <input type="checkbox" id="boys">Boys Hostel</>
 	   <input type="checkbox" id="girls">Girls Hostel</>
@@ -103,7 +67,7 @@ $('#girls').on('click', function () {
 <table id="mytable" class="someclass" summary="bla" border="1" cellpadding="1" cellspacing="1" style="width:500px;">
     <thead>
  
-    <th scope="row">id</th>
+    <th scope="row">S.No.</th>
      <th scope="row">Hostel Name</th>
       <th scope="row">Accomodation Type</th>
        <th scope="row">Sharing Type</th>
@@ -139,8 +103,7 @@ $('#girls').on('click', function () {
 </table>  
 <div style="margin-top:100px;">
 </div>
-
-
-
+</div>
+</div>
 </body>
 </html>

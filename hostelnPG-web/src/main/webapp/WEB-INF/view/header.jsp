@@ -7,12 +7,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<style type="text/css">
+.header-top{
+background: #2a2e33 none repeat scroll 0 0;
+    max-height: 75px;
+    border-bottom:#285cb9;	
+}
+</style>
 </head>
 <body>
-<div align="left" style=" border: 2px solid #73AD21;">
+<div class="header-top" align="left">
 <img src="images/logo.png" alt="HostelnPG" style="width:204px;height:78px;">
-<h2> Hostel n PG services</h2>
 </div>
 
 <b>${message}</b>

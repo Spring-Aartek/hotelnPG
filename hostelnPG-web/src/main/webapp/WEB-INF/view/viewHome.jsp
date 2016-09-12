@@ -12,15 +12,58 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script src="js/jquery.autocomplete.js"></script>
-
-
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Find Your Hostel</title>
+<style type="text/css">
+.mybody{
+  height:500px;
+  background: rgba(0, 0, 0, 0) url("images/rooms.jpg") repeat-y scroll 0 0 / cover ;
+}
+
+.homebody{
+   background:#00CCFF;
+    border:1px solid #ccc;
+    width: 100%;
+    height:300px;
+  
+}
+
+.mytd{
+   color:#FFD700;	
+}
+.my-content{
+    background: #2a2e33 none repeat scroll 0 0;
+    box-shadow: 2px 26px 37px -12px;
+    font-family: "Open Sans",sans-serif;
+    padding: 16px 10px;
+    padding: 25px;
+    width:800px;
+    margin:0 auto;
+    margin-top:40px;
+    height:100px;
+        
+}
+
+.my-content input{
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgb(236, 236, 236) inset;
+    color: #858585;
+    font-family: "Open Sans",sans-serif;
+    font-size: 0.8725em;
+    outline: medium none;
+    padding: 8px 30px;
+    background:#FFD700;
+}
+
+.main2{
+  height:200px;
+  width:100%;
+  
+}
+</style>
 <script>
 jQuery(function(){
 $("#country").autocomplete("getArea");
@@ -28,9 +71,9 @@ $("#country").autocomplete("getArea");
 </script>
  <script type="text/javascript" >
  function myFunc() {
-	 alert("Country");
+	 //alert("Country");
 	 var name = $('#country').val();
-	 alert(name);
+	 //alert(name);
 	 $.ajax({
 		  type: "post",
 		  url: "selectcity",
@@ -53,9 +96,9 @@ $("#country").autocomplete("getArea");
  
  
  function myFunc1() {
-	 alert("Area");
+	 //alert("Area");
 	 var name1 = $('#city').val();
-	 alert(name1);
+	 //alert(name1);
 	 $.ajax({
 		  type: "post",
 		  url: "getArea",
@@ -80,12 +123,12 @@ $("#country").autocomplete("getArea");
 	   }
  
  function sumbit() {
-	 alert("submit check");
+	 //alert("submit check");
 	 var country = document.getElementById('country')[document.getElementById('country').selectedIndex].innerHTML;
 	 var city = document.getElementById('city')[document.getElementById('city').selectedIndex].innerHTML;
 	 var area = document.getElementById('area')[document.getElementById('area').selectedIndex].innerHTML;
 		
-	 alert("step 2");
+	 //alert("step 2");
 	 $.ajax({
 		  type: "post",
 		  url: "submitform",
@@ -106,17 +149,17 @@ $("#country").autocomplete("getArea");
 </script>
     
 </head>
-<!--new changed -->
-<br>
-<p>
-</p>
 <body>
+<div class="mybody">
+<div class="homebody">
+<center><h1 style="color:#fff;font-size:90x;padding-top:50px;"><b>-------------------------<br>FIND YOUR HOSTEL/PG<br>-------------------------</b></h1></center>
+<div class="my-content">
 <form:form method="POST" modelAttribute="Country" action="SearchResult" >
 	
 		<center><table>
 
 			<tr>
-				<td>Country :</td>
+				<td class="mytd">Country :</td>
 				<td><form:select id="country"  name="country" onchange="myFunc()"  path="country_name" >
      <form:option      value="Nill" label="Select Country"  />
    <c:forEach var="countryList" items="${countryList}">
@@ -128,7 +171,7 @@ $("#country").autocomplete("getArea");
                                 </td>
 			
 			<!-- file change   -->
-		<td>City :</td>
+		<td class="mytd">City :</td>
 	<td><form:select id="city"  name="city" onchange="myFunc1()"  path="country_name" >
     <form:option      value="Nill" label="Select City"  />
    <c:forEach var="cityList" items="${cityList}">
@@ -138,7 +181,7 @@ $("#country").autocomplete("getArea");
 </form:select>
                                 </td>
 		
-		   <td>Area :</td>
+		   <td class="mytd">Area :</td>
 		   <td><form:select id="area"  name="area" onchange="myFunc2()"  path="country_name" >
     <form:option      value="Nill" label="Select Area"  />
    <c:forEach var="areaList" items="${areaList}">
@@ -154,9 +197,10 @@ $("#country").autocomplete("getArea");
 
 
 <center><h4><a href="searchfilter">Click to Filter</a>   |  <a href="showlogin">Login</a>  |  <a href="basic">Basic</a></center>
-
-<div style="margin-top:100px;">
 </div>
-
+</div>
+<div class="main2">
+</div>
+</div>
 </body>
 </html>

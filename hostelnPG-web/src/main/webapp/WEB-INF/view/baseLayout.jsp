@@ -8,13 +8,13 @@
 <title><tiles:insertAttribute name="title" ignore="true" /></title>
 </head>
 <body>
-  <table width="100%" border="0" cellpadding="0" cellspacing="0" align="left">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
     <tr>
       <td colspan="2" align="left"><tiles:insertAttribute name="header" />
       </td>
     </tr>
     <tr>
-      <td valign="top" ><tiles:insertAttribute name="body" />
+      <td><tiles:insertAttribute name="body" />
       </td>
     </tr>
     <tr>

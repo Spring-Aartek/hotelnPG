@@ -6,6 +6,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <style>
+.myfooter{
+background:#333333;
+height:225px;
+}
+.myfooter h4{
+  color:#EBFFEB;
+  font-size: 16px;
+  }
+  .myfooter a{
+  color:#EBFFEB;
+  
+  }
 .wrap {
   overflow:hidden;
   width:1200px; /* Optional */
@@ -30,6 +42,7 @@
 
 </head>
 <body>
+<div class="myfooter">
 <footer>
   <div id="wrap">
 
@@ -66,6 +79,6 @@
 
 </div>
   <!--footer ends here -->
-
+</div>
 </body>
 </html>
