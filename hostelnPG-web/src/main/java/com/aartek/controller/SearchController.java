@@ -74,29 +74,10 @@ public class SearchController {
 
 	}
 
-	@RequestMapping(value = "/searchfilter")
-	public String searchfilter(@ModelAttribute("UserRegistration") UserRegistration userregistration,
-			Map<String, Object> map, Model model)
-			throws Exception {
-		
-		List<HostelnPGPost> hostelnPGPost=null;
-		String country = "India";
-		String city = "indore";
-		String area = "palasia";
-		System.out.println("List of All TYpe " + country + " " + city + " " + area);
-		
-		 hostelnPGPost = searchService.validateSearchByFilterService( city, area);
-		
-		System.out.println(hostelnPGPost.size());
-		
-		model.addAttribute("hostelnPGPost", hostelnPGPost);
-
-		return "Search";
-
-	}
+	
 
 	
-	@RequestMapping(value = "/submitform", method = RequestMethod.POST)
+	@RequestMapping(value = "/SearchResult", method = RequestMethod.POST)
 	public  String submitform(@ModelAttribute("UserRegistration") UserRegistration userregistration,
 			Map<String, Object> map, Model model,@RequestParam(required = false) String country_name)
 			throws Exception {
