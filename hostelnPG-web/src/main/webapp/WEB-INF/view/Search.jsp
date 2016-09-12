@@ -108,6 +108,7 @@ $('#girls').on('click', function () {
       <th scope="row">Accomodation Type</th>
        <th scope="row">Sharing Type</th>
        <th scope="row">Boys /Girls</th>
+           <th scope="row">Area</th>
     	
   </tr>
    
@@ -124,6 +125,7 @@ $('#girls').on('click', function () {
     <td>${hostelnPGPost.accommodation_type}</td>
         <td>${hostelnPGPost.sharing_type}</td>
          <td>${hostelnPGPost.hostel_gender}</td>
+           <td>${hostelnPGPost.area}</td>
    
   </tr>
  

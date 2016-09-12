@@ -28,11 +28,15 @@ import org.springframework.web.servlet.mvc.AbstractController;
 import com.aartek.model.UserDTO;
 import com.aartek.model.UserRegistration;
 import com.aartek.service.LoginService;
+import com.aartek.service.RegisterService;
 
 @Controller
 public class LoginController {
 	@Autowired
 	private LoginService loginservice;
+
+	@Autowired
+	private RegisterService registerService;
 
 	private static Logger logger=Logger.getRootLogger();
 	/*
@@ -88,12 +92,20 @@ public class LoginController {
 	@RequestMapping(method = RequestMethod.GET, value="/{id}")
 	 public @ResponseBody UserRegistration getUserById(@PathVariable String id){
 		UserRegistration user = new UserRegistration();
+		
+		Integer id1=Integer.parseInt(id);
+		
+		List<UserRegistration> updatedlist = registerService.getUserRecordbyId(id1, user);
+		
+		
+		
 		user.setId(1);
-		user.setFirstName("Abhi");
+		user.setFirstName("Abhishek");
 		user.setLastName("chouhan");
 		user.setMobile("1790214570");
 		user.setEmailId("Email@gmail.com");
 	  return user;
+		//return updatedlist
 	 }
 
 	

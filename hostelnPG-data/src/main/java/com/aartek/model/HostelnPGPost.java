@@ -26,7 +26,7 @@ public class HostelnPGPost {
 	@Column(name = "City")
 	private String city;
 	@Column(name = "Area")
-	private String Area;
+	private String area;
 	
 	
 	
@@ -50,10 +50,10 @@ public class HostelnPGPost {
 		this.city = city;
 	}
 	public String getArea() {
-		return Area;
+		return area;
 	}
 	public void setArea(String area) {
-		Area = area;
+		area = area;
 	}
 	public Integer getId() {
 		return id;

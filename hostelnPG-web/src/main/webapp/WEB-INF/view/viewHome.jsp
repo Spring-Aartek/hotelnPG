@@ -28,7 +28,7 @@ $("#country").autocomplete("getArea");
 </script>
  <script type="text/javascript" >
  function myFunc() {
-	 alert("hello");
+	 alert("Country");
 	 var name = $('#country').val();
 	 alert(name);
 	 $.ajax({
@@ -42,10 +42,31 @@ $("#country").autocomplete("getArea");
 				  for (var i = 0; i < response.length; i++) {
 				     $('#city').append('<option value="' + response[i].city_id + '">' + response[i].city_name+ '</option>');
 				  }
-				 
-			  
-			  
-			  
+		 },
+		 
+		  error: function(){      
+		   alert('Error while request..');
+		  }
+		 });
+
+	   }
+ 
+ 
+ function myFunc1() {
+	 alert("Area");
+	 var name1 = $('#city').val();
+	 alert(name1);
+	 $.ajax({
+		  type: "post",
+		  url: "getArea",
+		  data : {city_id: name1},
+		  cache: false,
+		  success : function(response) {
+		     
+			 
+				  for (var i = 0; i < response.length; i++) {
+				     $('#area').append('<option value="' + response[i].area_id + '">' + response[i].area_name+ '</option>');
+				  }
 			  
 		 },
 		 
@@ -58,24 +79,20 @@ $("#country").autocomplete("getArea");
 	 
 	   }
  
- function myFunc2() {
-	 alert("Area");
-	 var name1 = $('#city').val();
-	 alert(name1);
+ function sumbit() {
+	 alert("submit check");
+	 var country = document.getElementById('country')[document.getElementById('country').selectedIndex].innerHTML;
+	 var city = document.getElementById('city')[document.getElementById('city').selectedIndex].innerHTML;
+	 var area = document.getElementById('area')[document.getElementById('area').selectedIndex].innerHTML;
+		
+	 alert("step 2");
 	 $.ajax({
 		  type: "post",
-		  url: "getArea",
-		  data : {city_id: name1},
-		  cache: false,
-		  success : function(response) {
-		     
-			 
-				  for (var i = 0; i < response.length; i++) {
-				     $('#area').html('<option value="' + response[i].area_id + '">' + response[i].area_name+ '</option>');
-				  }
-			  
-		 },
-		 
+		  url: "submitform",
+		  data : {country: country,city:city,area:area  
+		  
+		  },
+		
 		  error: function(){      
 		   alert('Error while request..');
 		  }
@@ -85,32 +102,6 @@ $("#country").autocomplete("getArea");
 	 
 	   }
 
- function myFunc2() {
-	 alert("Area");
-	 var name1 = $('#city').val();
-	 alert(name1);
-	 $.ajax({
-		  type: "post",
-		  url: "getArea",
-		  data : {city_id: name1},
-		  cache: false,
-		  success : function(response) {
-		     
-			 
-				  for (var i = 0; i < response.length; i++) {
-				     $('#area').html('<option value="' + response[i].area_id + '">' + response[i].area_name+ '</option>');
-				  }
-			  
-		 },
-		 
-		  error: function(){      
-		   alert('Error while request..');
-		  }
-		 });
-	 
-
-	 
-	   }
  
 </script>
     
@@ -120,15 +111,17 @@ $("#country").autocomplete("getArea");
 <p>
 </p>
 <body>
-<form:form method="POST" modelAttribute="Country" action="searchfilter">
+<form:form method="POST" modelAttribute="Country" action="submitform" >
 	
 		<center><table>
 
 			<tr>
 				<td>Country :</td>
 				<td><form:select id="country"  name="country" onchange="myFunc()"  path="country_name" >
+     <form:option      value="Nill" label="Select Country"  />
    <c:forEach var="countryList" items="${countryList}">
-    
+  
+  
      <form:option      value="${countryList.country_id}" label="${countryList.country_name}"  />
    </c:forEach>
 </form:select>
@@ -136,19 +129,25 @@ $("#country").autocomplete("getArea");
 			
 			<!-- file change   -->
 		<td>City :</td>
-		<td><form:select id="city"  name="city"  path="country_name" onchange="myFunc2()">
-  
-     <form:option value="select City" label="Select City"  />
-  
-</form:select></td>
+	<td><form:select id="city"  name="city" onchange="myFunc1()"  path="country_name" >
+    <form:option      value="Nill" label="Select City"  />
+   <c:forEach var="cityList" items="${cityList}">
+    
+     <form:option      value="${cityList.city_id}" label="${cityList.city_name}"  />
+   </c:forEach>
+</form:select>
+                                </td>
 		
 		   <td>Area :</td>
-		   <td><form:select id="area" name="area" path="country_name" autocomplete="on">
-  
-        <form:option value="select Area" label="Select Area" />
-  
-        </form:select></td>
-				<td colspan="3"><input type="submit" value="Search" /></td>
+		   <td><form:select id="area"  name="area" onchange="myFunc2()"  path="country_name" >
+    <form:option      value="Nill" label="Select Area"  />
+   <c:forEach var="areaList" items="${areaList}">
+    
+     <form:option      value="${areaList.area_id}" label="${areaList.area_name}"  />
+   </c:forEach>
+</form:select>
+                                </td>
+				<td colspan="3"><input type="submit" value="Search"  /></td>
 			</tr>
 		</table></center>
 	</form:form>

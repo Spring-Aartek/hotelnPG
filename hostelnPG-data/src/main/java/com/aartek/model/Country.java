@@ -18,6 +18,8 @@ public class Country {
 	Integer country_id;
 	@Column(name = "country_name")
 	String country_name;
+	
+	
 	public Integer getCountry_id() {
 		return country_id;
 	}

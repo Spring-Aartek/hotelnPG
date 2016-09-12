@@ -49,10 +49,10 @@ List<City> cityList = null;
 		
 		}
 	}
-	public List<HostelnPGPost> validateSearchByFilterService() {
+	public List<HostelnPGPost> validateSearchByFilterService(String city,String area) {
 		List<HostelnPGPost> HostelnPGPost = null;
 				
-		HostelnPGPost=searchrepository.searchbyFilterRepository();
+		HostelnPGPost=searchrepository.searchbyFilterRepository(city,area);
 				if(HostelnPGPost.size()==0)
 				{
 					return null; 
@@ -74,10 +74,6 @@ List<City> cityList = null;
 			}
 			else
 			{
-				 
-			    for (Area area : areaList) {
-					System.out.println(area.getArea_name());
-				}
 				return areaList;
 			
 			}

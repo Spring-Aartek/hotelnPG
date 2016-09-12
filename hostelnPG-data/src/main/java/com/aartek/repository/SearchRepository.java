@@ -48,19 +48,36 @@ public class SearchRepository {
 		System.out.println("id ="+id);
 	    areaList = hibernateTemplate.find("from Area where city_id=?",id);
 	    
-	    
-	    for (Area area : areaList) {
-			System.out.println(area.getArea_name());
-		}
         return areaList;
 
 	}
 	
 	
-	public List<HostelnPGPost> searchbyFilterRepository() {
+	public List<HostelnPGPost> searchbyFilterRepository(String city,String area) {
 		List<HostelnPGPost> hostelnPGPost ;
 			
-			hostelnPGPost = hibernateTemplate.find("from HostelnPGPost");
+		Integer cityid=Integer.parseInt(city);
+		Integer areaid=Integer.parseInt(area);
+		
+		
+		List  cityName = hibernateTemplate.find("select city_name FROM City  where city_id=?",cityid);
+
+		
+		System.out.println("List Value = "+cityName.get(0).toString());
+		
+		String city_name=(String)cityName.get(0).toString();
+		System.out.println();
+		
+		List  areaName = hibernateTemplate.find("select area_name FROM Area  where area_id=?",areaid);
+
+		
+		System.out.println("List Value = "+areaName.get(0).toString());
+		
+		String area_name=(String)areaName.get(0).toString();
+		
+		
+		
+			hostelnPGPost = hibernateTemplate.find("FROM HostelnPGPost where city=? AND area=?",city_name,area_name);
 
 				return hostelnPGPost;
 

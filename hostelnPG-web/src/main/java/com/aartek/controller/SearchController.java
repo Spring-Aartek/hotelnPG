@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -52,14 +53,9 @@ public class SearchController {
 	@RequestMapping(value = "/selectcity", method = RequestMethod.POST)
 	public List register(@ModelAttribute("Country") Country country, Map<String, Object> map, Model model,
 			@RequestParam(required = false) Integer country_id) throws Exception {
-
 		model.addAttribute("City", new City());
-
 		List cityList = searchService.validateCityService(country_id);
 		model.addAttribute("cityList", cityList);
-
-		String userList = "Hello World";
-
 		return cityList;
 
 	}
@@ -70,8 +66,8 @@ public class SearchController {
 			@RequestParam(required = false) Integer city_id) throws Exception {
 		model.addAttribute("Area", new Area());
 		List<Area> areaList = null;
+		System.out.println("City id "+city_id);
 		areaList = searchService.validateAreaService(city_id);
-
 		model.addAttribute("areaList", areaList);
 
 		return areaList;
@@ -80,14 +76,45 @@ public class SearchController {
 
 	@RequestMapping(value = "/searchfilter")
 	public String searchfilter(@ModelAttribute("UserRegistration") UserRegistration userregistration,
-			Map<String, Object> map, Model model,@RequestParam( required = false) String country_name) throws Exception {
-		System.out.println("Country ID = "+country_name);
-		List<HostelnPGPost> hostelnPGPost = searchService.validateSearchByFilterService();
-
+			Map<String, Object> map, Model model)
+			throws Exception {
+		
+		List<HostelnPGPost> hostelnPGPost=null;
+		String country = "India";
+		String city = "indore";
+		String area = "palasia";
+		System.out.println("List of All TYpe " + country + " " + city + " " + area);
+		
+		 hostelnPGPost = searchService.validateSearchByFilterService( city, area);
+		
+		System.out.println(hostelnPGPost.size());
+		
 		model.addAttribute("hostelnPGPost", hostelnPGPost);
 
 		return "Search";
 
 	}
 
+	
+	@RequestMapping(value = "/submitform", method = RequestMethod.POST)
+	public  String submitform(@ModelAttribute("UserRegistration") UserRegistration userregistration,
+			Map<String, Object> map, Model model,@RequestParam(required = false) String country_name)
+			throws Exception {
+
+		System.out.println("Country_Name = "+country_name);
+	
+	
+		
+		String [] s=country_name.split(",");
+		String city_name=s[1];
+		String area_name=s[2];
+		
+		List<HostelnPGPost> hostelnPGPost = searchService.validateSearchByFilterService(city_name, area_name);
+		model.addAttribute("hostelnPGPost", hostelnPGPost);
+		
+		System.out.println(hostelnPGPost.size());
+		
+		return "Search";
+		
+	}
 }
